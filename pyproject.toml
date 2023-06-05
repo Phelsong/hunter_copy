@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "hunter-copy"
+version = "0.1.0"
+description = ""
+authors = [
+    "Josh S Wilkinson <JoshsWilkinson@Outlook.com>",
+]
+readme = "README.md"
+packages = [
+    { include = "test" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+
+[build-system]
+requires = [
+    "poetry-core",
+]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+test = "hunter_copy\\test:test_main"
