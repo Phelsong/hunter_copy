@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hunter-copy"
 version = "0.1.0"
-description = ""
+description = "batch copier"
 authors = [
     "Josh S Wilkinson <JoshsWilkinson@Outlook.com>",
 ]
@@ -23,4 +23,4 @@ requires = [
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-test = "hunter_copy\\test:test_main"
+test = "test\\test_main:run"
