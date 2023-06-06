@@ -51,7 +51,5 @@ if __name__ == "__main__":
             search_dir=search_dir,
         )
     except IndexError:
-        print(
-            f"Usage: batch.exe <in_csv> <out_dir> <search_dir> < --verbose(optional)>"
-        )
-        print(f"Example: batch.exe .\\csv .\\out_dir_path .\\search_dir_path --verbose")
+        print(f"Usage: hc.exe <in_csv> <out_dir> <search_dir> < --verbose(optional)>")
+        print(f"Example: hc.exe .\\csv .\\out_dir_path .\\search_dir_path --verbose")
