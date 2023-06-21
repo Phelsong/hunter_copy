@@ -1,5 +1,5 @@
 # hc.exe
 
-## Usage: hc.exe <in_csv> <search_dir> <out_dir> < --verbose(optional)>
+## Usage: hc.exe <in_csv> <out_dir> <search_dir>
 
-```Example: hc.exe .\csv .\source_dir_path .\out_dir_path --verbose```
+```Example: hc.exe .\csv .\out_dir_path .\source_dir_path ```
