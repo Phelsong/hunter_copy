@@ -1,4 +1,3 @@
-
 import sys
 import os
 from pathlib import Path
@@ -65,5 +64,5 @@ fn main():
                 search_dir=search_dir,
             )
     except AssertionError:
-        print("Usage: hc.exe <in_csv> <out_dir> <search_dir> < --verbose(optional)>")
-        print("Example: hc.exe ./csv ./out_dir_path ./search_dir_path --verbose")
+        print("Usage: hc(.exe) <in_csv> <search_dir> <out_dir> < --verbose(optional)>")
+        print("Example: hc(.exe) ./csv.csv ./search_dir_path ./out_dir_path --verbose")
