@@ -23,4 +23,4 @@ requires = [
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-test = "test\\test_main:run"
+test = "test.test_main:run"

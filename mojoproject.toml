@@ -7,7 +7,9 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
-build = "mojo build hunter_copy.mojo"
+test = "mojo hunter_copy.mojo test/query.csv test/search test/found"
+build = "mojo build hunter_copy.mojo -o dist/hunter_copy"
+
 
 [dependencies]
-max = ">=24.5.0,<25"
+max = ">=24.6.0,<25"
