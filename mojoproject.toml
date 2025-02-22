@@ -12,3 +12,5 @@ build = "mojo build hunter_copy.mojo -o dist/hunter_copy;cd dist; sha256sum hunt
 
 [dependencies]
 max = ">=25.1.0,<26"
+#find_substring = "0.1.1"
+#mojo_csv = "1.2.0"
