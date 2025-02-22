@@ -1,13 +1,13 @@
-import sys
+from sys import argv, exit
 import os
 from pathlib import Path
 from testing import assert_true, assert_raises
 from mojo_csv import CsvReader
-from find_substring import find_substring
+from find_substring.find_substring import find_substring
 
 
 # ------------------------------------------------------------------------------
-fn hunter_copy(owned in_csv: String, owned search_dir: String, owned out_dir: String,
+fn hunter_copy(owned in_csv: Path, owned search_dir: Path, owned out_dir: Path,
     owned verbose: Bool = False):
     try:
         var no_match_csv = open("./not_found.csv", "w")
@@ -21,10 +21,10 @@ fn hunter_copy(owned in_csv: String, owned search_dir: String, owned out_dir: St
                 for k in range(len(work_dir)):
                     if find_substring(work_dir[k], reader.elements[i]):
                         case_exists=True
-                        var matchee: Path = Path(search_dir).joinpath(work_dir[k])
-                        var out: Path = Path(out_dir).joinpath(work_dir[k])
+                        var matchee = search_dir.joinpath(work_dir[k])
+                        var out = out_dir.joinpath(work_dir[k])
                         with open(matchee, "r") as match_file:
-                            with open(out, "w") as out_file:
+                            with open(out_dir, "w") as out_file:
                                 out_file.write(match_file.read())
                         if verbose:
                             print(
@@ -45,12 +45,12 @@ fn hunter_copy(owned in_csv: String, owned search_dir: String, owned out_dir: St
 
 fn main():
     try:
-        var in_args: Int8 =(len(sys.argv()))
+        var in_args: Int8 =(len(argv()))
         assert_true(in_args >= 3)
-        var in_csv = sys.argv()[1]
-        var search_dir = sys.argv()[2]
-        var out_dir = sys.argv()[3]
-        if sys.argv()[4] == "--verbose" or sys.argv()[4] == "-v":
+        var in_csv = Path(argv()[1])
+        var search_dir = Path(argv()[2])
+        var out_dir = Path(argv()[3])
+        if argv()[4] == "--verbose" or argv()[4] == "-v":
             hunter_copy(
                 in_csv=in_csv,
                 out_dir=out_dir,
@@ -66,3 +66,4 @@ fn main():
     except AssertionError:
         print("Usage: hc(.exe) <in_csv> <search_dir> <out_dir> < --verbose(optional)>")
         print("Example: hc(.exe) ./csv.csv ./search_dir_path ./out_dir_path --verbose")
+        exit()
